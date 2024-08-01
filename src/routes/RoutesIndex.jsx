@@ -1,33 +1,25 @@
-import { Routes, Route } from 'react-router-dom'
-import { Login, Home, Me } from '@/pages'
-import useAuthContext from '../hooks/useAuthContext'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import ProductDetailComponent from '../components/ProductDetailComponent';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
-const RoutesIndex = () => {
-
-    const { isAuth } = useAuthContext();
-
+const RoutesIndex = ({ products, error }) => {
     return (
         <Routes>
             <Route
-                path='/'
-                element={isAuth ? <Home /> : <Login />}
-            // Operador ternario
-            // Sintaxis:
-            // condicion a evaluar ? valorDeRetornoVerdadero : valorDeRetornoFalso
-            /*
-                if(isAuth){
-                    return <Home />
-                }else{
-                    return <Login />
-                }
-            */
+                path="/"
+                element={<Home products={products} error={error} />}
             />
             <Route
-                path='/me'
-                element={isAuth ? <Me /> : <Login />} 
+                path="/items/:id"
+                element={<ProductDetailComponent />}
             />
+            <Route path="/login" element= {<Login />}/>
+            <Route path="/register" component={<Signup />} />
         </Routes>
-    )
-}
+    );
+};
 
 export default RoutesIndex;

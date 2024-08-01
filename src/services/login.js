@@ -1,9 +1,6 @@
 import axios from "axios";
-// import * as dotenv from 'dotenv'
-// dotenv.config()
 
 const API_URL = import.meta.env.VITE_API_URL;
-// console.log(`Variable ultra secreta: ${dotenv.process.env.DB_PASSWORD}`);
 
 const loginService = async (loginInfo, login) => {
     try {
@@ -35,7 +32,6 @@ const registerUserService = async (newUserInfo) => {
     }
 }
 
-// Función para aprender a hacer pruebas.
 const logout = (token) => {
     if(token.role == 'ADMIN'){
         return -1

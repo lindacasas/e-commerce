@@ -1,0 +1,117 @@
+.product-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-lighter);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    height: 100vh;
+}
+
+.product-detail-img,
+.product-detail-info {
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+.product-detail-image {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.product-detail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    margin: 0 0 0 1.5rem;
+    border: 1px solid #ffffff4d;
+    padding: 16px;
+    border-radius: 8px;
+    background: #bbeeee83;
+    box-shadow: 0 4px 30px #D6EBEE1a;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+.product-detail-name {
+    font-size: 2em;
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+.product-detail-description {
+    font-size: 1.2em;
+    color: var(--color-secondary);
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+.product-detail-price,
+.product-detail-category,
+.product-detail-brand {
+    font-size: 1.1em;
+    color: var(--color-secondary);
+    margin: 5px 0;
+}
+
+.btn-add-to-cart {
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--color-primary); 
+    color: var(--color-lighter); 
+    cursor: pointer;
+    transition: background-color 0.25s, border-color 0.25s;
+    margin: 1rem 0 0 0;
+}
+
+.btn-add-to-cart:hover {
+    background-color: var(--color-secondary); 
+    border-color: var(--color-secondary); 
+}
+
+.btn-add-to-cart:focus,
+.btn-add-to-cart:focus-visible {
+    outline: 4px auto var(--color-primary); 
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .product-detail {
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        height: auto; 
+    }
+
+    .product-detail-img,
+    .product-detail-info {
+        flex: none;
+        width: 100%; 
+        max-width: 600px; 
+        margin: 1.5rem 0 1rem 0;
+        padding: 0;
+    }
+    .product-detail-info {
+        padding: 1rem;
+    }
+    .product-detail-img {
+        width: 50%;
+    }
+}
